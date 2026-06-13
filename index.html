@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Swarada Joshi — Full-Stack & AI/ML Developer</title>
+<meta name="description" content="Swarada Joshi — Full-Stack Developer, AI/ML Builder, Published Researcher & Hackathon Award Winner. IT undergrad @ VIT Pune." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Page loader -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <span class="loader-name">SWARADA JOSHI</span>
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+    <span class="loader-pct" id="loaderPct">0%</span>
+  </div>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Animated aurora background -->
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+<div class="grid-overlay" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- 3D hero canvas -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- Navbar -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav-logo" data-cursor>SJ<span>.</span></a>
+  <nav class="nav-links">
+    <a href="#about" data-cursor>About</a>
+    <a href="#experience" data-cursor>Experience</a>
+    <a href="#projects" data-cursor>Projects</a>
+    <a href="#skills" data-cursor>Skills</a>
+    <a href="#contact" data-cursor>Contact</a>
+  </nav>
+  <a href="https://github.com/swarasprogram" target="_blank" rel="noopener" class="nav-cta" data-cursor>
+    GitHub ↗
+  </a>
+  <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+  <a href="https://github.com/swarasprogram" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <p class="hero-eyebrow reveal"><span class="dot-live"></span> Available for opportunities · Pune, India</p>
+      <h1 class="hero-title">
+        <span class="line"><span class="word">Swarada</span></span>
+        <span class="line"><span class="word grad">Joshi</span></span>
+      </h1>
+      <p class="hero-role reveal">
+        <span class="role-pre">I'm a</span>
+        <span class="role-rotator" id="roleRotator">Full-Stack Developer</span>
+      </p>
+      <p class="hero-desc reveal">
+        I build scalable, end-to-end software — from AI-driven fraud detection to
+        production banking platforms. IT undergrad @ VIT Pune, published researcher
+        &amp; hackathon award winner.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary" data-cursor data-magnetic>
+          <span>View my work →</span>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-cursor data-magnetic>
+          <span>Get in touch</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Glass profile card -->
+    <aside class="hero-card reveal" data-tilt-card>
+      <div class="hc-glow"></div>
+      <div class="hc-top">
+        <div class="hc-avatar"><span>SJ</span></div>
+        <div class="hc-id">
+          <b>Swarada Joshi</b>
+          <small>Full-Stack &amp; AI/ML Developer</small>
+        </div>
+        <span class="hc-status"><i></i>Open</span>
+      </div>
+      <div class="hc-row"><span>📍 Location</span><b>Pune, India</b></div>
+      <div class="hc-row"><span>🎓 Education</span><b>B.Tech IT · VIT Pune</b></div>
+      <div class="hc-row"><span>⭐ CGPA</span><b>9.04 / 10</b></div>
+      <div class="hc-row"><span>🏅 Certified</span><b>IBM Full-Stack Dev</b></div>
+      <div class="hc-stack">
+        <span>Python</span><span>React</span><span>FastAPI</span><span>ML</span><span>.NET</span>
+      </div>
+      <div class="hc-socials">
+        <a href="https://github.com/swarasprogram" target="_blank" rel="noopener" data-cursor aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/swarada2410/" target="_blank" rel="noopener" data-cursor aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://leetcode.com/u/swara2410/" target="_blank" rel="noopener" data-cursor aria-label="LeetCode">LeetCode</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Bento stat tiles -->
+  <div class="hero-bento reveal">
+    <div class="bento-tile">
+      <span class="bt-ico">🎯</span>
+      <b data-count="9.04" data-dec="2">0</b><small>CGPA / 10</small>
+    </div>
+    <div class="bento-tile">
+      <span class="bt-ico">🛡️</span>
+      <b data-count="92" data-suffix="%">0</b><small>Fraud precision</small>
+    </div>
+    <div class="bento-tile">
+      <span class="bt-ico">🚀</span>
+      <b data-count="500" data-suffix="+">0</b><small>Teams beaten</small>
+    </div>
+    <div class="bento-tile">
+      <span class="bt-ico">📄</span>
+      <b data-count="2" data-suffix="">0</b><small>Papers published</small>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"><i></i></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Python</span><i>✦</i><span>React</span><i>✦</i><span>FastAPI</span><i>✦</i>
+    <span>Machine Learning</span><i>✦</i><span>.NET</span><i>✦</i><span>PostgreSQL</span><i>✦</i>
+    <span>XGBoost</span><i>✦</i><span>DistilBERT</span><i>✦</i><span>TensorFlow</span><i>✦</i>
+    <span>Python</span><i>✦</i><span>React</span><i>✦</i><span>FastAPI</span><i>✦</i>
+    <span>Machine Learning</span><i>✦</i><span>.NET</span><i>✦</i><span>PostgreSQL</span><i>✦</i>
+    <span>XGBoost</span><i>✦</i><span>DistilBERT</span><i>✦</i><span>TensorFlow</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title reveal-up">About me</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="reveal-up">
+        I'm an <b>Information Technology undergraduate</b> at Vishwakarma Institute of
+        Technology, Pune, focused on building scalable software that actually ships.
+        My work spans <b>full-stack engineering</b> and <b>applied AI/ML</b> — building
+        end-to-end systems with Python, React, and FastAPI.
+      </p>
+      <p class="reveal-up">
+        Recently I built secure financial microservices for transaction monitoring,
+        compliance automation and anomaly detection during my product internship,
+        and I'll be training at <b>Citi Bank</b> through the Citi Bridge Program in 2026.
+        I'm a <b>published researcher</b>, <b>IBM-certified full-stack developer</b>,
+        and a hackathon award winner.
+      </p>
+      <div class="about-tags reveal-up">
+        <span>AI / ML Systems</span>
+        <span>Full-Stack Engineering</span>
+        <span>DevOps</span>
+        <span>Research</span>
+      </div>
+    </div>
+    <div class="about-cards">
+      <div class="glass-card tilt reveal-up">
+        <span class="gc-icon">🎓</span>
+        <h3>Education</h3>
+        <p><b>B.Tech — Information Technology</b></p>
+        <p class="muted">VIT Pune · 2023 – Present · CGPA 9.04 / 10</p>
+      </div>
+      <div class="glass-card tilt reveal-up">
+        <span class="gc-icon">🏆</span>
+        <h3>Recognition</h3>
+        <p><b>2nd Runner-Up</b> — UPTIQ × IEEE AI Hackathon 2025</p>
+        <p class="muted">Top 50 / 3000+ · Odoo × NMIT & SPIT finalist</p>
+      </div>
+      <div class="glass-card tilt reveal-up">
+        <span class="gc-icon">📄</span>
+        <h3>Published Research</h3>
+        <p><b>Springer · World Congress on Smart Computing 2025</b></p>
+        <p class="muted">6th ICCIS 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section experience" id="experience">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title reveal-up">Experience &amp; Education</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal-up">
+      <div class="tl-marker"></div>
+      <div class="tl-body glass-card">
+        <span class="tl-date">Mar 2026</span>
+        <h3>Trainee — Citi Bridge Training Program</h3>
+        <span class="tl-org">Citi Bank</span>
+        <p>Hands-on exposure to enterprise financial system architecture, agile
+           engineering practices, and large-scale production workflows at one of the
+           world's leading financial institutions.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-up">
+      <div class="tl-marker"></div>
+      <div class="tl-body glass-card">
+        <span class="tl-date">Aug 2025 – Oct 2025</span>
+        <h3>Product Development Intern</h3>
+        <span class="tl-org">iFinix Fintech Pvt. Ltd.</span>
+        <p>Built a secure full-stack banking platform (React, .NET, Oracle) with Python
+           backend microservices for transaction monitoring, compliance automation and
+           anomaly detection.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal-up">
+      <div class="tl-marker"></div>
+      <div class="tl-body glass-card">
+        <span class="tl-date">Jul 2023 – Present</span>
+        <h3>B.Tech, Information Technology</h3>
+        <span class="tl-org">Vishwakarma Institute of Technology, Pune</span>
+        <p>CGPA 9.04 / 10. Coursework across Data Structures &amp; Algorithms, OOP, DBMS,
+           Operating Systems and Machine Learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section projects" id="projects">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2 class="section-title reveal-up">Featured projects</h2>
+  </div>
+  <div class="proj-grid">
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/FinSmart_AI-powered-Banking-App" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/01</span>
+        <span class="proj-badge">AI · Fintech</span>
+      </div>
+      <h3>FIN-SMART</h3>
+      <p class="proj-sub">AI-Powered Intelligent Banking System</p>
+      <p class="proj-desc">
+        Real-time fraud detection engine using Isolation Forest at <b>92% precision</b>,
+        with XGBoost &amp; DistilBERT models for credit-risk prediction and customer
+        sentiment, wired into a production-ready full-stack analytics dashboard.
+      </p>
+      <div class="proj-tags">
+        <span>Python</span><span>Scikit-Learn</span><span>XGBoost</span>
+        <span>DistilBERT</span><span>React</span><span>.NET</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/assist-med-vision" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/02</span>
+        <span class="proj-badge">AI · Healthcare</span>
+      </div>
+      <h3>MEDASSIST</h3>
+      <p class="proj-sub">Multimodal Healthcare Screening</p>
+      <p class="proj-desc">
+        Clinical screening for early detection of Parkinson's (voice — ANN) and brain
+        tumors (MRI — CNN), combining two input modalities in one platform with
+        explainable AI outputs and real-time inference.
+      </p>
+      <div class="proj-tags">
+        <span>Python</span><span>TensorFlow</span><span>React</span><span>Flask</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/UrbanCare" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/03</span>
+        <span class="proj-badge">Full-Stack</span>
+      </div>
+      <h3>URBANCARE</h3>
+      <p class="proj-sub">Appointment Booking &amp; Scheduling</p>
+      <p class="proj-desc">
+        End-to-end booking platform with real-time slot selection, secure auth,
+        appointment lifecycle, payment tracking and receipt generation — enforcing
+        double-booking prevention, RBAC and ORM migrations.
+      </p>
+      <div class="proj-tags">
+        <span>React</span><span>FastAPI</span><span>PostgreSQL</span>
+        <span>SQLAlchemy</span><span>Alembic</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/Companio" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/04</span>
+        <span class="proj-badge">AI · 3D Web</span>
+      </div>
+      <h3>COMPANIO</h3>
+      <p class="proj-sub">Conversational AI Assistant</p>
+      <p class="proj-desc">
+        A conversational AI assistant integrating full-stack pipelines with immersive
+        3D web graphics for a rich, interactive user experience.
+      </p>
+      <div class="proj-tags">
+        <span>JavaScript</span><span>AI</span><span>3D / WebGL</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/Kalarthi-Dance-Academy-Website" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/05</span>
+        <span class="proj-badge">Frontend</span>
+      </div>
+      <h3>KALARTHI</h3>
+      <p class="proj-sub">Kathak Dance Academy Website</p>
+      <p class="proj-desc">
+        A responsive, elegant platform showcasing a Kathak dance academy, built with
+        React and Vite with a focus on visual storytelling.
+      </p>
+      <div class="proj-tags">
+        <span>React</span><span>Vite</span><span>JavaScript</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+    <article class="proj-card tilt reveal-up" data-cursor data-cursor-text="View ↗">
+      <a href="https://github.com/swarasprogram/prep-partner" target="_blank" rel="noopener" class="proj-link"></a>
+      <div class="proj-top">
+        <span class="proj-index">/06</span>
+        <span class="proj-badge">AI · In progress</span>
+      </div>
+      <h3>PREP-PARTNER</h3>
+      <p class="proj-sub">AI Interview Preparation</p>
+      <p class="proj-desc">
+        An AI-powered interview preparation tool with company-specific prep packs,
+        real-time feedback and a smart payment selector. Actively in development.
+      </p>
+      <div class="proj-tags">
+        <span>TypeScript</span><span>React</span><span>AI</span>
+      </div>
+      <span class="proj-go">Explore on GitHub →</span>
+    </article>
+
+  </div>
+  <div class="proj-all reveal-up">
+    <a href="https://github.com/swarasprogram?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost" data-cursor data-magnetic>
+      <span>See all repositories ↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section skills" id="skills">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2 class="section-title reveal-up">Skills &amp; toolbox</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-col glass-card reveal-up">
+      <h3>Languages</h3>
+      <ul class="chips">
+        <li>Python</li><li>C++</li><li>SQL</li><li>TypeScript</li><li>JavaScript</li>
+      </ul>
+    </div>
+    <div class="skill-col glass-card reveal-up">
+      <h3>Frameworks &amp; Libraries</h3>
+      <ul class="chips">
+        <li>React</li><li>FastAPI</li><li>.NET</li><li>Flask</li>
+        <li>Scikit-Learn</li><li>TensorFlow</li><li>Pandas</li><li>REST APIs</li>
+      </ul>
+    </div>
+    <div class="skill-col glass-card reveal-up">
+      <h3>Databases &amp; Tools</h3>
+      <ul class="chips">
+        <li>PostgreSQL</li><li>MySQL</li><li>Oracle</li><li>Git</li><li>Postman</li>
+      </ul>
+    </div>
+    <div class="skill-col glass-card reveal-up">
+      <h3>Concepts</h3>
+      <ul class="chips">
+        <li>DSA</li><li>OOP</li><li>DBMS</li><li>Operating Systems</li><li>Machine Learning</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cert-strip reveal-up">
+    <div class="cert"><b>IBM</b> Full Stack Software Developer — Professional Certificate</div>
+    <div class="cert"><b>Springer</b> Published Researcher — Smart Computing 2025</div>
+    <div class="cert"><b>IEEE × UPTIQ</b> AI Innovator's Hackathon — 2nd Runner-Up</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="contact-glow"></div>
+  <span class="section-num center">05</span>
+  <h2 class="contact-title reveal-up">Let's build something<br /><span class="grad">that ships.</span></h2>
+  <p class="contact-sub reveal-up">
+    Open to internships, collaborations and interesting problems in full-stack &amp; AI/ML.
+  </p>
+  <a href="mailto:swaradajoshi05@gmail.com" class="contact-mail reveal-up" data-cursor data-magnetic>
+    swaradajoshi05@gmail.com
+  </a>
+  <div class="contact-links reveal-up">
+    <a href="https://github.com/swarasprogram" target="_blank" rel="noopener" data-cursor>GitHub</a>
+    <a href="https://www.linkedin.com/in/swarada2410/" target="_blank" rel="noopener" data-cursor>LinkedIn</a>
+    <a href="https://leetcode.com/u/swara2410/" target="_blank" rel="noopener" data-cursor>LeetCode</a>
+    <a href="tel:+919307984100" data-cursor>+91 93079 84100</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year"></span> Swarada Joshi</span>
+  <span>Designed &amp; built with ⚡ · Pune, India</span>
+  <a href="#home" data-cursor data-magnetic class="to-top">Back to top ↑</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
