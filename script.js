@@ -104,6 +104,43 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal-up, .section .reveal').forEach(el => io.observe(el));
 
+  /* ---------- Active-section highlight (scroll-spy) ---------- */
+  const navLinkEls = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const spySections = navLinkEls
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if (spySections.length) {
+    const updateActive = () => {
+      const probe = scrollY + innerHeight * 0.35;
+      let current = null;
+      spySections.forEach(s => {
+        if (s.getBoundingClientRect().top + scrollY <= probe) current = s;
+      });
+      const id = current ? '#' + current.id : null;
+      navLinkEls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === id));
+    };
+    addEventListener('scroll', updateActive, { passive: true });
+    addEventListener('resize', updateActive);
+    updateActive();
+  }
+
+  /* ---------- Smooth in-page scrolling (robust against overflow quirks) ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (!id || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = id === '#home' ? 0 : 70;
+      const y = Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset);
+      window.scrollTo({ top: y, behavior: reduced ? 'auto' : 'smooth' });
+      history.replaceState(null, '', id);
+      burger.classList.remove('open');
+      menu.classList.remove('open');
+    });
+  });
+
   /* ---------- Counters ---------- */
   const counters = document.querySelectorAll('[data-count]');
   const cio = new IntersectionObserver(entries => {
