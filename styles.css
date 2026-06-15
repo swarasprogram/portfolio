@@ -115,7 +115,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 .glass-card{position:relative;background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);
   border-radius:20px;padding:26px;backdrop-filter:blur(12px) saturate(130%);
   transition:transform .35s var(--ease),border-color .35s,box-shadow .35s;overflow:hidden}
-.glass-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+.glass-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
   background:linear-gradient(140deg,rgba(124,108,255,.6),transparent 35%,transparent 65%,rgba(47,212,240,.5));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
   opacity:.35;transition:opacity .4s}
@@ -162,10 +162,10 @@ main,.marquee,.footer{position:relative;z-index:3}
 .hero-card{position:relative;background:linear-gradient(165deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
   border:1px solid var(--line);border-radius:24px;padding:24px;backdrop-filter:blur(16px) saturate(140%);
   box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden}
-.hero-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+.hero-card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
   background:linear-gradient(140deg,rgba(124,108,255,.7),transparent 40%,transparent 60%,rgba(47,212,240,.6));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-.hc-glow{position:absolute;top:-40%;right:-30%;width:80%;height:80%;background:radial-gradient(circle,rgba(124,108,255,.4),transparent 60%);filter:blur(30px)}
+.hc-glow{position:absolute;top:-40%;right:-30%;width:80%;height:80%;pointer-events:none;background:radial-gradient(circle,rgba(124,108,255,.4),transparent 60%);filter:blur(30px)}
 .hc-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:7px;margin-bottom:18px;position:relative}
 .hc-photo{width:94px;height:94px;border-radius:50%;padding:3px;background:var(--grad);box-shadow:0 12px 32px rgba(124,108,255,.45);position:relative}
 .hc-photo img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;border:3px solid var(--bg-2)}
@@ -189,10 +189,10 @@ main,.marquee,.footer{position:relative;z-index:3}
 .hc-socials a:hover{background:var(--grad-soft);border-color:transparent;color:#fff;transform:translateY(-2px)}
 
 /* Bento stats */
-.hero-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hero-bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .bento-tile{position:relative;background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);
   border-radius:18px;padding:20px;overflow:hidden;backdrop-filter:blur(10px);transition:transform .3s var(--ease),border-color .3s}
-.bento-tile::after{content:"";position:absolute;inset:0;background:radial-gradient(220px circle at 50% 0,rgba(124,108,255,.18),transparent 60%);opacity:0;transition:opacity .35s}
+.bento-tile::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(220px circle at 50% 0,rgba(124,108,255,.18),transparent 60%);opacity:0;transition:opacity .35s}
 .bento-tile:hover{transform:translateY(-5px);border-color:rgba(124,108,255,.4)}
 .bento-tile:hover::after{opacity:1}
 .bt-ico{display:block;margin-bottom:12px;color:var(--accent-2)}
@@ -241,7 +241,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px}
 .proj-card{position:relative;background:linear-gradient(160deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:22px;padding:28px;
   overflow:hidden;backdrop-filter:blur(10px);transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
-.proj-card::after{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0),rgba(124,108,255,.18),transparent 45%);opacity:0;transition:opacity .35s}
+.proj-card::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0),rgba(124,108,255,.18),transparent 45%);opacity:0;transition:opacity .35s}
 .proj-card:hover{transform:translateY(-7px);border-color:rgba(124,108,255,.45);box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 40px rgba(124,108,255,.15)}
 .proj-card:hover::after{opacity:1}
 .proj-link{position:absolute;inset:0;z-index:5}
