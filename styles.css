@@ -212,7 +212,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 
 /* ===== Marquee ===== */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;overflow:hidden;background:rgba(255,255,255,.02);backdrop-filter:blur(6px)}
-.marquee-track{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;align-items:center;width:auto;max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+.marquee-track{display:flex;gap:34px;align-items:center;width:max-content;animation:scrollX 32s linear infinite}
 .marquee-track span{font:700 clamp(20px,3vw,34px) 'Sora';color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.32);letter-spacing:-.02em}
 .marquee-track i{color:var(--accent-2);font-style:normal;font-size:16px}
 @keyframes scrollX{to{transform:translateX(-50%)}}
