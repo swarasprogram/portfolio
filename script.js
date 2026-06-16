@@ -20,6 +20,21 @@
   /* ---------- Year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ---------- Static starfield (drawn once, no animation) ---------- */
+  const sf = document.getElementById('starfield');
+  if (sf) {
+    let html = '';
+    for (let i = 0; i < 160; i++) {
+      const x = (Math.random() * 100).toFixed(2);
+      const y = (Math.random() * 100).toFixed(2);
+      const s = (Math.random() * 1.5 + 0.6).toFixed(2);
+      const o = (Math.random() * 0.5 + 0.18).toFixed(2);
+      const c = Math.random() < 0.22 ? '139,166,201' : '255,255,255';
+      html += `<i style="left:${x}%;top:${y}%;width:${s}px;height:${s}px;opacity:${o};background:rgb(${c})"></i>`;
+    }
+    sf.innerHTML = html;
+  }
+
   /* ---------- Custom cursor ---------- */
   const dot = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');

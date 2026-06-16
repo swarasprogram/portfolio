@@ -35,15 +35,8 @@ a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--accent),var(--accent-2));border-radius:10px}
 
 /* ===== Backgrounds ===== */
-.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;filter:blur(60px)}
-.blob{position:absolute;border-radius:50%;opacity:.22;mix-blend-mode:screen;will-change:transform}
-.b1{width:46vw;height:46vw;left:-8vw;top:-10vh;background:radial-gradient(circle,#3a5680,transparent 65%);animation:drift1 22s var(--ease) infinite alternate}
-.b2{width:42vw;height:42vw;right:-10vw;top:0;background:radial-gradient(circle,#46627f,transparent 65%);opacity:.18;animation:drift2 26s var(--ease) infinite alternate}
-.b3{width:40vw;height:40vw;left:25vw;bottom:-18vh;background:radial-gradient(circle,#38506f,transparent 65%);opacity:.16;animation:drift3 30s var(--ease) infinite alternate}
-@keyframes drift1{to{transform:translate(12vw,14vh) scale(1.15)}}
-@keyframes drift2{to{transform:translate(-10vw,16vh) scale(1.2)}}
-@keyframes drift3{to{transform:translate(8vw,-12vh) scale(1.1)}}
-
+.starfield{position:fixed;inset:0;z-index:0;pointer-events:none}
+.starfield i{position:absolute;border-radius:50%;display:block}
 .grid-overlay{position:fixed;inset:0;z-index:1;pointer-events:none;
   background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
@@ -134,7 +127,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 13px 'JetBrains Mono';
   color:#c3c9de;margin-bottom:22px;width:fit-content;padding:8px 15px;border:1px solid var(--line);border-radius:40px;
   background:var(--card-2);backdrop-filter:blur(8px)}
-.dot-live{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 0 rgba(139,166,201,.7);animation:pulse 2s infinite}
+.dot-live{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 8px rgba(139,166,201,.7)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(139,166,201,.6)}70%{box-shadow:0 0 0 10px rgba(139,166,201,0)}100%{box-shadow:0 0 0 0 rgba(139,166,201,0)}}
 .hero-title{font:800 clamp(52px,9vw,112px) 'Sora';line-height:.92;letter-spacing:-.05em;margin-bottom:6px}
 .hero-title .line{display:block;overflow:hidden}
@@ -150,7 +143,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 .btn{position:relative;display:inline-flex;align-items:center;gap:8px;font:600 15px 'Space Grotesk';
   padding:15px 28px;border-radius:40px;overflow:hidden;transition:transform .25s var(--ease),box-shadow .3s}
 .btn span{position:relative;z-index:2}
-.btn-primary{background:var(--grad);color:#06070f;background-size:200% 200%;animation:gradShift 6s ease infinite;box-shadow:0 8px 30px rgba(91,127,176,.35)}
+.btn-primary{background:var(--grad);color:#06070f;box-shadow:0 8px 30px rgba(91,127,176,.35)}
 .btn-primary:hover{box-shadow:0 14px 44px rgba(91,127,176,.5);transform:translateY(-3px)}
 @keyframes gradShift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
 .btn-ghost{border:1px solid var(--line);color:var(--fg);background:var(--card)}
@@ -202,7 +195,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 
 .hero-scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font:500 11px 'JetBrains Mono';letter-spacing:.2em}
 .scroll-line{width:1.5px;height:40px;background:var(--line);overflow:hidden;position:relative}
-.scroll-line i{position:absolute;top:0;left:0;width:100%;height:40%;background:var(--accent-2);animation:scrollDown 1.8s var(--ease) infinite}
+.scroll-line i{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(var(--accent-2),transparent)}
 @keyframes scrollDown{0%{top:-40%}100%{top:120%}}
 
 @media (max-width:880px){
@@ -214,7 +207,7 @@ main,.marquee,.footer{position:relative;z-index:3}
 
 /* ===== Marquee ===== */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;overflow:hidden;background:rgba(255,255,255,.02);backdrop-filter:blur(6px)}
-.marquee-track{display:flex;gap:34px;align-items:center;width:max-content;animation:scrollX 32s linear infinite}
+.marquee-track{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;align-items:center;width:auto;max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
 .marquee-track span{font:700 clamp(20px,3vw,34px) 'Sora';color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.32);letter-spacing:-.02em}
 .marquee-track i{color:var(--accent-2);font-style:normal;font-size:16px}
 @keyframes scrollX{to{transform:translateX(-50%)}}
