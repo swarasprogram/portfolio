@@ -195,7 +195,7 @@
     const pos = new Float32Array(COUNT * 3);
     const col = new Float32Array(COUNT * 3);
     // Subtle starfield: pale white with indigo & cyan accents to match the aurora
-    const c1 = new THREE.Color(0x9d8bff), c2 = new THREE.Color(0xeaf0ff), c3 = new THREE.Color(0x2fd4f0);
+    const c1 = new THREE.Color(0x6f8fb8), c2 = new THREE.Color(0xdfe6f2), c3 = new THREE.Color(0x4a6a95);
     for (let i = 0; i < COUNT; i++) {
       const r = 8 + Math.random() * 2.5;
       const th = Math.acos(2 * Math.random() - 1);
@@ -216,7 +216,7 @@
     // Floating wireframe knot
     const knot = new THREE.Mesh(
       new THREE.TorusKnotGeometry(2.4, 0.5, 120, 16),
-      new THREE.MeshBasicMaterial({ color: 0x6d8cc0, wireframe: true, transparent: true, opacity: 0.07 })
+      new THREE.MeshBasicMaterial({ color: 0x5b7fb0, wireframe: true, transparent: true, opacity: 0.07 })
     );
     scene.add(knot);
 
