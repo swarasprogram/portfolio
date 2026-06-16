@@ -19,7 +19,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
+  background:var(--bg) radial-gradient(1000px 480px at 78% -8%,rgba(91,127,176,.07),transparent 60%) fixed;
   color:var(--fg);
   font-family:'Sora',system-ui,sans-serif;
   line-height:1.6;
