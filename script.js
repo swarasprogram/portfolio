@@ -29,7 +29,8 @@
       const y = (Math.random() * 100).toFixed(2);
       const s = (Math.random() * 1.5 + 0.6).toFixed(2);
       const o = (Math.random() * 0.5 + 0.18).toFixed(2);
-      const c = Math.random() < 0.22 ? '139,166,201' : '255,255,255';
+      const r = Math.random();
+      const c = r < 0.12 ? '124,108,255' : r < 0.22 ? '47,212,240' : '255,255,255';
       html += `<i style="left:${x}%;top:${y}%;width:${s}px;height:${s}px;opacity:${o};background:rgb(${c})"></i>`;
     }
     sf.innerHTML = html;
